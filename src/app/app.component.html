@@ -1,0 +1,33 @@
+<!--div>
+  <input [(ngModel)]="search" (keydown.arrowDown)="i = i + 1">
+  <div *ngFor="let option of filteredOptions; index as index" [routerLink]="option.path" [class.focused]="index == i">
+    {{option.title}}
+  </div>
+</div!-->
+  
+<!--ul class="nav justify-content-center">
+  <div class="active-cyan-4 mb-4">
+  </div>
+  <div class="active-purple-4 mb-4">
+    <input [(ngModel)]="search" class="form-control" type="text" placeholder="Search" aria-label="Search">
+    <a *ngFor="let option of filteredOptions" [routerLink]="option.path"> {{option.title}}</a>
+  </div>
+
+
+</ul!-->
+<ul class="nav justify-content-center">
+  <div class="active-purple-4 mb-4">
+    <input [(ngModel)]="search" class="form-control" type="text" placeholder="Search" aria-label="Search" (click)="showHint()">
+    <div *ngIf="show">
+      <a class="list-group-item" *ngFor="let option of filteredOptions" [routerLink]="option.path" (click)="hideHint()">
+        {{option.title}}
+       </a>
+     </div>
+  </div>
+</ul>
+<div (click)="hideHint()">
+  <router-outlet></router-outlet>
+</div>
+<footer class="page-footer font-small blue">
+  <div class="footer-copyright text-center py-3">© 2020 Copyright: Filip Makrlík</div>
+</footer>
