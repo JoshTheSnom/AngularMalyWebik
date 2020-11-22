@@ -15,6 +15,7 @@
 
 
 </ul!-->
+<app-nav (postButtonClick)="sidebar = !sidebar"></app-nav>
 <ul class="nav justify-content-center">
   <div class="active-purple-4 mb-4">
     <input [(ngModel)]="search" class="form-control" type="text" placeholder="Search" aria-label="Search" (click)="showHint()">
@@ -26,6 +27,9 @@
   </div>
 </ul>
 <div (click)="hideHint()">
+  <div *ngIf="!sidebar">
+    <app-sidebar></app-sidebar>
+  </div>
   <router-outlet></router-outlet>
 </div>
 <footer class="page-footer font-small blue">

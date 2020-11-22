@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import {FormControl} from '@angular/forms';
 
 
@@ -10,6 +10,7 @@ type SearchOption = { title: string, path: string };
   styleUrls: ['./app.component.scss']
 })
 export class AppComponent {
+  sidebar = true;
   title = 'PRGUkol1';
   search = '';
   options: SearchOption[] = [
@@ -38,4 +39,5 @@ export class AppComponent {
     }
     return result;
   }
+  
 }
