@@ -9,6 +9,7 @@ import { ContactComponent } from './contact/contact.component';
 import { FormsModule } from '@angular/forms';
 import { NavComponent } from './nav/nav.component';
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { UserCreateComponent } from './user-create/user-create.component';
 
 @NgModule({
   declarations: [
@@ -17,7 +18,8 @@ import { SidebarComponent } from './sidebar/sidebar.component';
     AboutComponent,
     ContactComponent,
     NavComponent,
-    SidebarComponent
+    SidebarComponent,
+    UserCreateComponent
   ],
   imports: [
     BrowserModule,

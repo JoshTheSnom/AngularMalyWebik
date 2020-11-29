@@ -17,5 +17,14 @@
         </li>
       </ul>
       <button (click)="onClick()">Bamhurger</button>
+      <ul class="nav justify-content-center"></ul>
+        <div class="active-purple-4 mb-4">
+          <input [(ngModel)]="search" class="form-control" type="text" placeholder="Search" aria-label="Search" (click)="showHint()">
+          <div *ngIf="show">
+            <a class="list-group-item" *ngFor="let option of filteredOptions" [routerLink]="option.path" (click)="hideHint()">
+              {{option.title}}
+             </a>
+           </div>
+        </div>
     </div>
   </nav>
